@@ -1,16 +1,21 @@
+require('dotenv').config();
+
 // Import Swagger Options
 const swagger = require('./config/swagger')
 
-// Register Swagger
 
 const fastify = require('fastify')({
     logger: true
 });
 const mongoose = require('mongoose');
 
-var uri = "mongodb://gusanchedev:P3mbroke11#@clusterjs-shard-00-00.bo47k.mongodb.net:27017,clusterjs-shard-00-01.bo47k.mongodb.net:27017,clusterjs-shard-00-02.bo47k.mongodb.net:27017/fastify-api?ssl=true&replicaSet=atlas-wpz0mp-shard-0&authSource=admin&retryWrites=true&w=majority";
+console.log(`URI: ${process.env.MONGODB_URI}`);
+
+var uri = process.env.MONGODB_URI;
+
 const routes = require('./routes');
 
+// Register Swagger
 fastify.register(require('fastify-swagger'), swagger.options)
 
 mongoose.connect(uri, { 
