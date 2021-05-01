@@ -1,0 +1,24 @@
+{
+  "name": "fastify-api",
+  "version": "0.1.0",
+  "description": "API developed with Node.js, Fastify, MongoDb and Swagger",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node.js",
+    "fastify",
+    "mongodb",
+    "swagger"
+  ],
+  "author": "Gustavo Sanchez (gustavosanchezgalarza@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "fastify": "^3.15.1",
+    "fastify-swagger": "^4.7.0",
+    "mongoose": "^5.12.7"
+  }
+}
